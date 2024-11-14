@@ -1,0 +1,8 @@
+.bg{
+    background-image: url('../../../public/image/shef.png');
+    height: 600px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
