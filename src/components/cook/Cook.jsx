@@ -5,7 +5,7 @@ import './Cook.css'
 
 
 
-const Cook = ({cooks}) => {
+const Cook = ({cooks,handleRemovefromPreparing}) => {
     const [cooking,setCooking] = useState([])
 
     const handlePreparing = recipe =>{
@@ -23,7 +23,7 @@ const Cook = ({cooks}) => {
     
     return (
         <div className="w-1/3 border mt-8 p-4  ">
-
+            
             <div>
                 <h1 className="text-2xl font-semibold text-center mb-4">Want to Cook: {cooks.length} </h1>
              <hr />
@@ -42,7 +42,7 @@ const Cook = ({cooks}) => {
             </div>
 
              {
-                cooks.map((cook,id)=> <CookDetail key={id} cook={cook} handlePreparing = {handlePreparing}></CookDetail> )
+                cooks.map((cook,id)=> <CookDetail key={id} cook={cook} handlePreparing = {handlePreparing} handleRemovefromPreparing={handleRemovefromPreparing}></CookDetail> )
              }
             </div>
 

@@ -7,6 +7,7 @@ import Recipes from "./components/recipes/Recipes";
 import { useState } from 'react';
 
 function App() {
+  // want to cook 
   const [cooks, setCook] = useState([]);
   console.log(cooks);
 
@@ -14,6 +15,11 @@ function App() {
     const newcook = [...cooks, recipe];
     setCook(newcook);
   };
+  const handleRemovefromPreparing = id =>{
+    const remaining = cooks.filter(idx => idx.recipe_id !== id)
+    setCook(remaining)
+    console.log('ok');
+  }
   return (
     <>
       <Header></Header>
@@ -21,7 +27,7 @@ function App() {
       <Recipes></Recipes>
       <div className="flex container mx-auto gap-6">
         <Menu handleWanttoCook= {handleWanttoCook}></Menu>
-        <Cook cooks={cooks}></Cook>
+        <Cook cooks={cooks} handleRemovefromPreparing= {handleRemovefromPreparing}></Cook>
       </div>
     </>
   );

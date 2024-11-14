@@ -1,7 +1,11 @@
 
 
-const CookDetail = ({cook,handlePreparing}) => {
+const CookDetail = ({cook,handlePreparing,handleRemovefromPreparing}) => {
     const {recipe_name,preparing_time,calories,recipe_id} = cook
+    const handleClick = ()=>{
+        handlePreparing(cook)
+        handleRemovefromPreparing(recipe_id)
+    }
     return (
         <div>
               
@@ -18,7 +22,7 @@ const CookDetail = ({cook,handlePreparing}) => {
                     <p>{calories}</p>
                 </div>
                 <div className="">
-                <button onClick={()=> handlePreparing(cook)} className="bg-green-500 p-2 rounded-xl">Preparing</button>
+                <button onClick={handleClick} className="bg-green-500 p-2 rounded-xl">Preparing</button>
                 </div>
             </div>
              
